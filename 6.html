@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>text changing</title>
+<style>
+p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5px;
+    color: red;
+}
+</style>
+</head>
+<body>
+<p id="demo">TEXT GROWING</p>
+<script>
+let size = 5;
+let growing = true;
+const text = document.getElementById("demo");
+
+function changeText() {
+    text.style.fontSize = size + "px";
+    text.innerHTML = growing ? "TEXT GROWING" : "TEXT SHRINKING";
+    text.style.color = growing ? "red" : "blue";
+
+    size += growing ? 5 : -5;
+
+    if (size === 50 || size === 5) {
+        growing = !growing; 
+    }
+}
+
+setInterval(changeText, 1000);
+</script>
+</body>
+</html>
