@@ -1,20 +1,21 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Events</title>
+    <title>Events</title>
+    <script>
+        function msg(event) {
+            event.preventDefault();
+            let name = document.person.n1.value;
+            let usn = document.person.n2.value;
+            alert("Hello " + name + " | USN: " + usn);
+        }
+    </script>
 </head>
-<scripttype="text/javascript"> function msg()
-{varname=document.person.n1; var usn= document.person.n2;
-alert("Hello"+name.value+"USN"+usn.value);
-}
-</script>
 <body>
-</br></br>
-<formname="person">
-EnterThename</br>
-<inputtype="text"name="n1"></br></br>
-EnterTheUSN</br>
-<inputtype="text"name="n2">
-<inputtype="submit"onClick="msg();">
-</form>
+    <form name="person" onsubmit="msg(event);">
+        Name: <input type="text" name="n1"><br><br>
+        USN: <input type="text" name="n2"><br><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
