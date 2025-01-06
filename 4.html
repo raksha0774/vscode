@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capitals of Countries</title>
+    <style>
+        p { color: red; font-weight: bold; font-size: 20px; }
+    </style>
+    <script>
+        function showCapital() {
+            
+            const countries = {
+                "INDIA": "NEW DELHI",
+                "USA": "WASHINGTON DC",
+                "NETHERLANDS": "AMSTERDAM",
+                "RUSSIA": "MOSCOW",
+                "JAPAN": "TOKYO"
+            };
+
+
+            let country = document.getElementById("country").value;
+
+            
+            let message = country ? "Capital is: " + countries[country] : "Please select a country";
+
+            document.getElementById("capt").innerHTML = message;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h2>Select a Country</h2>
+        
+        <select id="country" onchange="showCapital()">
+            <option value="">--SELECT--</option>
+            <option value="INDIA">INDIA</option>
+            <option value="USA">USA</option>
+            <option value="NETHERLANDS">NETHERLANDS</option>
+            <option value="RUSSIA">RUSSIA</option>
+            <option value="JAPAN">JAPAN</option>
+        </select>
+        <p id="capt"></p>
+    </center>
+</body>
+</html>
