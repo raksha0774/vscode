@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Button Event</title>
+    <style>
+   body {
+    font-family: Arial;
+    text-align: center;
+    background: white;
+}
+
+.container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px;
+    background: beige;
+}
+
+#message {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background: pink;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mouse Button Event</h1>
+        <p>Hold the mouse to see the message. Release to hide.</p>
+        <div id="message">Mouse button is pressed!</div>
+    </div>
+
+    <script>
+        const message = document.getElementById('message');
+
+        document.addEventListener('mousedown', () => message.style.display = 'block');
+        document.addEventListener('mouseup', () => message.style.display = 'none');
+    </script>
+</body>
+</html>
